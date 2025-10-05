@@ -1,0 +1,105 @@
+/* Swiper Global Styles */
+.swiper {
+  padding-top: 20px;
+}
+
+/* Designers Swiper Styles */
+.designers-swiper .swiper-pagination {
+  position: static !important;
+  margin-top: 60px;
+}
+
+.designers-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #d1d5db;
+  opacity: 1;
+  margin: 0 6px;
+}
+
+.designers-swiper .swiper-pagination-bullet-active {
+  background: #111827;
+}
+
+.designers-swiper .swiper-slide {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Team Swiper Styles */
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  color: white;
+}
+
+.team-swiper .swiper-pagination-bullet {
+  background: white;
+}
+
+.team-swiper .swiper-pagination-bullet-active {
+  background: #ef4444;
+}
+
+/* Animation Classes */
+.animate-slide-up {
+  animation: slideUp 1.2s ease-out;
+}
+
+.animate-fade-slide-left {
+  opacity: 0;
+  animation: fadeSlideLeft 1.5s ease-out 0.5s forwards;
+}
+
+.animate-fade-slide-right {
+  opacity: 0;
+  animation: fadeSlideRight 1.5s ease-out 1s forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Keyframe Animations */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(80px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
