@@ -16,12 +16,12 @@ const BannerSection = () => {
           playsInline
           preload="metadata"
         >
-          <source src="/banner.mp4" type="video/mp4" />
-          {/* Fallback for older browsers */}
           <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            src="https://res.cloudinary.com/dalcchcpb/video/upload/v1759709005/banner_aeg8up.mp4"
             type="video/mp4"
           />
+          {/* Fallback */}
+          {/* <source src="/banner.mp4" type="video/mp4" /> */}
         </video>
         {/* Dark overlay */}
         {/* <div className="absolute inset-0 bg-black/60"></div> */}
