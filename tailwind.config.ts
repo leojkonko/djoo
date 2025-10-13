@@ -20,9 +20,9 @@ const config: Config = {
         'ladyj-accent': '#FF6B9D',
       },
       fontFamily: {
-        'sans': ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
-        'display': ['Impact', '"Helvetica Neue"', 'Helvetica', 'Arial Black', 'sans-serif'],
-        'body': ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        'sans': ['Helvetica', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'sans-serif'],
+        'display': ['Impact', 'Helvetica', '-apple-system', 'Arial Black', 'sans-serif'],
+        'body': ['Helvetica', '-apple-system', 'BlinkMacSystemFont', 'Arial', 'sans-serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

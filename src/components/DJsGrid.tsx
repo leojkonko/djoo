@@ -13,76 +13,64 @@ const DJsGrid = () => {
   const designers = [
     {
       id: 1,
-      name: "Nicoli Ares",
-      image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=400&fit=crop&crop=face",
+      name: "Estilista",
+      image: "/estilista1.jpg",
     },
     {
       id: 2,
-      name: "Miguel Santos",
-      image:
-        "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=400&fit=crop&crop=face",
+      name: "Estilista",
+      image: "/estilista2.jpg",
     },
     {
       id: 3,
-      name: "Carine Freitas",
-      image:
-        "https://images.unsplash.com/photo-1541823709867-1b206113eafd?w=300&h=400&fit=crop&crop=face",
+      name: "Estilista",
+      image: "/estilista3.jpg",
     },
     {
       id: 4,
-      name: "Manuela Lebens",
-      image:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=400&fit=crop&crop=face",
+      name: "Estilista",
+      image: "/estilista4.jpg",
     },
     {
       id: 5,
-      name: "Vitor Lucas",
-      image:
-        "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=300&h=400&fit=crop&crop=face",
+      name: "Estilista",
+      image: "/estilista5.jpg",
     },
-    {
-      id: 6,
-      name: "Sofia Martinez",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 7,
-      name: "Rafael Costa",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 8,
-      name: "Isabella Lima",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 9,
-      name: "Lucas Pereira",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 10,
-      name: "Amanda Silva",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 11,
-      name: "Bruno Oliveira",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=400&fit=crop&crop=face",
-    },
-    {
-      id: 12,
-      name: "Gabriela Rocha",
-      image:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=400&fit=crop&crop=face",
-    },
+    // {
+    //   id: 6,
+    //   name: "Sofia Martinez",
+    //   image: "/estilista6.jpg",
+    // },
+    // {
+    //   id: 7,
+    //   name: "Rafael Costa",
+    //   image: "/estilista7.jpg",
+    // },
+    // {
+    //   id: 8,
+    //   name: "Isabella Lima",
+    //   image: "/estilista8.jpg",
+    // },
+    // {
+    //   id: 9,
+    //   name: "Lucas Pereira",
+    //   image: "/estilista9.jpg",
+    // },
+    // {
+    //   id: 10,
+    //   name: "Amanda Silva",
+    //   image: "/estilista10.jpg",
+    // },
+    // {
+    //   id: 11,
+    //   name: "Bruno Oliveira",
+    //   image: "/estilista11.jpg",
+    // },
+    // {
+    //   id: 12,
+    //   name: "Gabriela Rocha",
+    //   image: "/estilista12.jpg",
+    // },
   ];
 
   return (
@@ -93,7 +81,7 @@ const DJsGrid = () => {
         {/* Designers Carousel */}
         <div className="mx-auto" style={{ scale: "1.04" }}>
           <div className="mb-4">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-0 ps-2">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-0 ps-8 lg:ps-2">
               DESFILES
             </h2>
           </div>
@@ -132,9 +120,9 @@ const DJsGrid = () => {
           >
             {designers.map((designer) => (
               <SwiperSlide key={designer.id}>
-                <div className="text-center group cursor-pointer">
+                <div className="text-center ">
                   {/* Designer Image */}
-                  <div className="relative overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105 mx-auto w-80 h-96">
+                  <div className="relative overflow-hidden mb-4 transition-transform duration-300 group cursor-pointer hover:scale-105 group-hover:scale-105 mx-auto w-80 h-96">
                     <Image
                       src={designer.image}
                       alt={designer.name}
@@ -147,12 +135,19 @@ const DJsGrid = () => {
                   {/* Designer Name */}
                   <h3 className="text-gray-900 text-4xl leading-tight text-end pr-2">
                     {designer.name.split(" ").map((word, idx) => (
-                      <div
-                        key={idx}
-                        className={idx === 0 ? "font-extrabold" : "font-light"}
-                      >
-                        {word}
-                      </div>
+                      <>
+                        <div
+                          key={idx}
+                          className={
+                            idx === 0 ? "font-extrabold" : "font-light"
+                          }
+                        >
+                          {word}
+                        </div>
+                        <p className="font-extralight text-xl -mt-2">
+                          [A DEFINIR]
+                        </p>
+                      </>
                     ))}
                   </h3>
                 </div>

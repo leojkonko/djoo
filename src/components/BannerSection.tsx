@@ -47,7 +47,19 @@ const BannerSection = () => {
 
       {/* Scroll Down Circle */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="relative">
+        <button
+          onClick={() => {
+            const nextSection = document.querySelector("#home");
+            if (nextSection) {
+              nextSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }
+          }}
+          className="relative cursor-pointer hover:scale-110 transition-transform duration-300"
+          aria-label="Scroll to next section"
+        >
           {/* Circular text - rotating 360 degrees */}
           <div className="w-28 h-28 animate-spin-slow">
             <svg viewBox="0 0 120 120" className="w-full h-full">
@@ -77,7 +89,7 @@ const BannerSection = () => {
               </svg>
             </div>
           </div>
-        </div>
+        </button>
       </div>
     </section>
   );

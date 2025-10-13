@@ -92,15 +92,15 @@ const StatsSection = () => {
               <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-8 leading-tight text-center">
                 O RIO GRANDE DO SUL MOSTRA MODA
               </h2>
-              <p className="text-gray-800 text-sm leading-relaxed text-justify">
+              <p className="text-gray-800 text-sm leading-tight text-justify">
                 É um evento inédito que tem como objetivo transformar a cidade
                 de Lajeado em um polo de <strong>referência em moda</strong>,
-                estilo e inovação. Realizado pela <strong>Djoo Agency</strong>,
-                o evento reunirá 10 marcas selecionadas para apresentar suas
+                estilo e inovação. Realizando pela <strong>Djoo Agency</strong>,
+                o evento reunirá 20 marcas selecionadas para apresentar suas
                 coleções em um desfile profissional conceitual, que une beleza,
-                branding e performance. Com um formato arrojado, sofisticado e
-                com curadoria de excelência, o evento terá duração de um único
-                dia, oferecendo ao público uma imersão no{" "}
+                branding e performance. Com um formato enxuto, sofisticado e com
+                curadoria de excelência, o evento terá duração de um único dia,
+                oferecendo ao público uma imersão no{" "}
                 <strong>universo fashion</strong>, com acesso a tendências,
                 marcas autorais e nomes promissores do mercado.
               </p>
@@ -167,7 +167,7 @@ const StatsSection = () => {
                 ? `${counters.area.toLocaleString()}M²`
                 : "0M²"}
             </div>
-            <div className="text-sm font-bold text-gray-900 mt-2">
+            <div className="text-xl font-normal text-gray-600 mt-4 tracking-widest text-right">
               DE EVENTO
             </div>
           </div>
@@ -182,7 +182,9 @@ const StatsSection = () => {
             >
               {counters.desfiles}
             </div>
-            <div className="text-sm font-bold text-gray-900 mt-2">DESFILES</div>
+            <div className="text-xl font-normal text-gray-600 mt-4 tracking-widest">
+              DESFILES
+            </div>
           </div>
 
           <div>
@@ -195,7 +197,9 @@ const StatsSection = () => {
             >
               SHOW
             </div>
-            <div className="text-sm font-bold text-gray-900 mt-2">NACIONAL</div>
+            <div className="text-xl text-right font-normal text-gray-600 mt-4 tracking-widest">
+              NACIONAL
+            </div>
           </div>
         </div>
       </div>

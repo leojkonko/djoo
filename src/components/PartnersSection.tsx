@@ -9,13 +9,9 @@ const PartnersSection = () => {
         {/* Main Sponsor */}
         <div className="text-center mb-20">
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Coca-Cola_logo.svg/2560px-Coca-Cola_logo.svg.png"
-              alt="Coca-Cola"
-              width={400}
-              height={160}
-              className="object-contain"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
         </div>
 
@@ -27,53 +23,33 @@ const PartnersSection = () => {
         {/* Partners Grid - First Row (2 logos) */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20 items-center justify-items-center">
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Adidas_logo.svg/2560px-Adidas_logo.svg.png"
-              alt="Adidas"
-              width={300}
-              height={120}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/2560px-Logo_NIKE.svg.png"
-              alt="Nike"
-              width={300}
-              height={120}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
         </div>
 
         {/* Partners Grid - Second Row (3 logos) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 items-center justify-items-center">
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Puma_Logo.svg/2560px-Puma_Logo.svg.png"
-              alt="Puma"
-              width={280}
-              height={110}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2560px-McDonald%27s_Golden_Arches.svg.png"
-              alt="McDonald's"
-              width={280}
-              height={110}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png"
-              alt="IBM"
-              width={280}
-              height={110}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
         </div>
 
@@ -87,22 +63,14 @@ const PartnersSection = () => {
         {/* Technical Partners */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 justify-items-center">
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
-              alt="Google"
-              width={350}
-              height={140}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
           <div className="flex justify-center">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1920px-Apple_logo_black.svg.png"
-              alt="Apple"
-              width={350}
-              height={140}
-              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+            <div className="w-64 h-24 bg-white border-2 border-gray-300 flex items-center justify-center">
+              <span className="text-black font-bold text-lg">SUA MARCA</span>
+            </div>
           </div>
         </div>
       </div>

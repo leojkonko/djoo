@@ -37,112 +37,37 @@ const TutorsSection = () => {
       id: 1,
       name: "Carol Bobsin",
       role: "Diretora Financeira",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=600&fit=crop&crop=face",
+      image: "/func1.jpg",
     },
     {
       id: 2,
       name: "Grasi Kersting",
       role: "Diretora Comercial",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=600&fit=crop&crop=face",
+      image: "/func2.jpg",
     },
     {
       id: 3,
       name: "Walter Stach",
       role: "Diretor de Cena",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
+      image: "/func3.jpg",
     },
     {
       id: 4,
       name: "Lauria Bonzanini",
       role: "Coordenadora Geral",
-      image:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=600&fit=crop&crop=face",
+      image: "/func4.jpg",
     },
     {
       id: 5,
       name: "Gabriel Bobsin",
       role: "Diretor Comercial",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 6,
-      name: "Mariana Silva",
-      role: "Diretora de Marketing",
-      image:
-        "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 7,
-      name: "Roberto Costa",
-      role: "Coordenador de Produção",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 8,
-      name: "Ana Carolina",
-      role: "Diretora Criativa",
-      image:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 9,
-      name: "Felipe Santos",
-      role: "Coordenador de Eventos",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 10,
-      name: "Juliana Moreira",
-      role: "Gerente de Projetos",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 11,
-      name: "Lucas Oliveira",
-      role: "Designer Gráfico",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 12,
-      name: "Sofia Martinez",
-      role: "Coordenadora de Moda",
-      image:
-        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 13,
-      name: "Diego Fernandez",
-      role: "Diretor de Fotografia",
-      image:
-        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 14,
-      name: "Camila Rodrigues",
-      role: "Produtora Executiva",
-      image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=600&fit=crop&crop=face",
-    },
-    {
-      id: 15,
-      name: "Thiago Almeida",
-      role: "Coordenador Técnico",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=600&fit=crop&crop=face",
+      image: "/func5.jpg",
     },
   ];
 
   return (
     <section
-      className="relative min-h-screen overflow-hidden bg-black"
+      className="relative min-h-screen overflow-hidden bg-black pb-14"
       ref={sectionRef}
     >
       {/* Background Image with Text Overlay */}
@@ -256,9 +181,9 @@ const TutorsSection = () => {
             >
               {team.map((designer) => (
                 <SwiperSlide key={designer.id}>
-                  <div className="text-center group cursor-pointer">
+                  <div className="text-center group ">
                     {/* Designer Image */}
-                    <div className="relative overflow-hidden mb-4 transition-transform duration-300 group-hover:scale-105 mx-auto w-80 h-96">
+                    <div className="relative overflow-hidden mb-4 transition-transform cursor-pointer duration-300 hover:scale-105 mx-auto w-80 h-96">
                       <Image
                         src={designer.image}
                         alt={designer.name}
@@ -274,7 +199,9 @@ const TutorsSection = () => {
                         <div
                           key={idx}
                           className={
-                            idx === 0 ? "font-extrabold" : "font-light"
+                            idx === 0
+                              ? "font-extrabold"
+                              : "font-extralight -mt-2"
                           }
                         >
                           {word}
@@ -283,7 +210,7 @@ const TutorsSection = () => {
                     </h3>
 
                     {/* Designer Role */}
-                    <p className="text-white text-2xl font-light text-end pr-2 mt-2">
+                    <p className="text-white text-xl font-extralight text-end pr-2 -mt-1">
                       {designer.role}
                     </p>
                   </div>

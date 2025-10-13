@@ -55,3 +55,7 @@ body {
   background: var(--ladyj-pink);
   color: white;
 }
+
+p {
+  font-weight: 300;
+}

@@ -81,6 +81,13 @@ const Navbar = () => {
               RSMM
             </Link>
             <Link
+              href="/manifesto"
+              className="text-white text-2xl font-bold hover:text-ladyj-pink transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              TEMA / MANIFESTO
+            </Link>
+            <Link
               href="/passarela"
               className="text-white text-2xl font-bold hover:text-ladyj-pink transition-colors"
               onClick={() => setIsMenuOpen(false)}
