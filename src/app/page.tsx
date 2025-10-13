@@ -10,9 +10,7 @@ import FullScreenImage from "@/components/FullScreenImage";
 import TutorsSection from "@/components/TutorsSection";
 import TimelineSection from "@/components/TimelineSection";
 import EventsSection from "@/components/EventsSection";
-import NewsSection from "@/components/NewsSection";
 import PartnersSection from "@/components/PartnersSection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

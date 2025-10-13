@@ -45,7 +45,7 @@ const StatsSection = () => {
       { threshold: 0.3 }
     );
 
-    let currentRef = sectionRef.current;
+    const currentRef = sectionRef.current;
     if (currentRef) {
       observer.observe(currentRef);
     }
