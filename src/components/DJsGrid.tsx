@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "../styles/swiper.css";
 
 const DJsGrid = () => {
   const designers = [
@@ -80,7 +81,7 @@ const DJsGrid = () => {
         {/* Section Header */}
 
         {/* Designers Carousel */}
-        <div className="mx-auto" style={{ scale: "1.04" }}>
+        <div className="mx-auto px-4">
           <motion.div 
             className="mb-4"
             initial={{ opacity: 0, x: -50 }}
@@ -100,7 +101,7 @@ const DJsGrid = () => {
           >
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={8}
+              spaceBetween={40}
               slidesPerView={1}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
@@ -117,16 +118,20 @@ const DJsGrid = () => {
               }}
               breakpoints={{
                 640: {
-                  slidesPerView: 2,
+                  slidesPerView: 1.5,
+                  spaceBetween: 30,
                 },
                 768: {
-                  slidesPerView: 3,
+                  slidesPerView: 2.5,
+                  spaceBetween: 35,
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 3.5,
+                  spaceBetween: 40,
                 },
                 1280: {
-                  slidesPerView: 5,
+                  slidesPerView: 4.5,
+                  spaceBetween: 40,
                 },
               }}
               className="designers-swiper"
@@ -169,35 +174,7 @@ const DJsGrid = () => {
             </Swiper>
           </motion.div>
         </div>
-      </div>      {/* Custom Swiper Styles */}
-      <style jsx global>{`
-        .swiper {
-          padding-top: 20px;
-        }
-
-        .designers-swiper .swiper-pagination {
-          position: static !important;
-          margin-top: 20px;
-        }
-
-        .designers-swiper .swiper-pagination-bullet {
-          width: 12px;
-          height: 12px;
-          background: #d1d5db;
-          opacity: 1;
-          margin: 0 6px;
-        }
-
-        .designers-swiper .swiper-pagination-bullet-active {
-          background: #111827;
-        }
-
-        .designers-swiper .swiper-slide {
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-        }
-      `}</style>
+      </div>
     </section>
   );
 };

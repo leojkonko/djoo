@@ -4,6 +4,13 @@
 }
 
 /* Designers Swiper Styles */
+.designers-swiper {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: -12px !important;
+  margin-right: -12px !important;
+}
+
 .designers-swiper .swiper-pagination {
   position: static !important;
   margin-top: 60px;
@@ -25,6 +32,12 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding: 0 12px !important;
+  box-sizing: border-box;
+}
+
+.designers-swiper .swiper-wrapper {
+  align-items: flex-end;
 }
 
 /* Team Swiper Styles */

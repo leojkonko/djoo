@@ -145,10 +145,10 @@ const TutorsSection = () => {
       </div>
       <div className="pb-4">
         <div className="lg:max-w-[90%] mx-auto ">
-          <div className="mx-auto" style={{ scale: "1.04" }}>
+          <div className="mx-auto px-4">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={8}
+              spaceBetween={40}
               slidesPerView={1}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
@@ -165,16 +165,20 @@ const TutorsSection = () => {
               }}
               breakpoints={{
                 640: {
-                  slidesPerView: 2,
+                  slidesPerView: 1.5,
+                  spaceBetween: 30,
                 },
                 768: {
-                  slidesPerView: 3,
+                  slidesPerView: 2.5,
+                  spaceBetween: 35,
                 },
                 1024: {
-                  slidesPerView: 4,
+                  slidesPerView: 3.5,
+                  spaceBetween: 40,
                 },
                 1280: {
-                  slidesPerView: 5,
+                  slidesPerView: 4.5,
+                  spaceBetween: 40,
                 },
               }}
               className="designers-swiper"
