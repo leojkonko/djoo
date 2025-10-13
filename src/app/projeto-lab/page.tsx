@@ -224,7 +224,10 @@ export default function ProjetoLabPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
+      <VideoBanner
+        videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372666/PROJETO_LAB_kwxnd9.mp4
+"
+      />
 
       {/* Hero Section with Logo */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4">

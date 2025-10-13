@@ -17,7 +17,7 @@ const BannerSection = () => {
           preload="metadata"
         >
           <source
-            src="https://res.cloudinary.com/dalcchcpb/video/upload/v1759709005/banner_aeg8up.mp4"
+            src="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372665/VIDEO_TEASER_-_RSMM_y7wb0s.mp4"
             type="video/mp4"
           />
           {/* Fallback */}

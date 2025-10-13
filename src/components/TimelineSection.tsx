@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const TimelineSection = () => {
   return (
@@ -30,19 +31,32 @@ const TimelineSection = () => {
         </div>
 
         {/* Show Nacional Title */}
-        {/* <h2 className="text-2xl font-bold text-black mb-6 text-center">
+        <motion.h2 
+          className="text-2xl font-bold text-black mb-6 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           SHOW NACIONAL
           <br />
           <span className="text-lg font-normal text-gray-600">[A DEFINIR]</span>
-        </h2> */}
+        </motion.h2>
 
         {/* Mobile Button */}
-        <Link
-          href="/show"
-          className="-mt-16 inline-block border-black border px-6 py-3 text-black hover:bg-black hover:text-white transition-all duration-300 tracking-wider text-base mb-8"
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
         >
-          GARANTA SEU INGRESSO
-        </Link>
+          <Link
+            href="/show"
+            className="inline-block border-black border px-6 py-3 text-black hover:bg-black hover:text-white transition-all duration-300 tracking-wider text-base mb-8"
+          >
+            GARANTA SEU INGRESSO
+          </Link>
+        </motion.div>
 
         {/* Mobile Spotify Logo */}
         <Image

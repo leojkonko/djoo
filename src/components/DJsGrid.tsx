@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -80,44 +81,56 @@ const DJsGrid = () => {
 
         {/* Designers Carousel */}
         <div className="mx-auto" style={{ scale: "1.04" }}>
-          <div className="mb-4">
-            <h2 className="text-3xl font-semibold text-gray-900 mb-0 ps-8 lg:ps-2">
+          <motion.div 
+            className="mb-4"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-semibold text-gray-900 mb-0 ps-2">
               DESFILES
             </h2>
-          </div>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={8}
-            slidesPerView={1}
-            navigation={{
-              nextEl: ".swiper-button-next-custom",
-              prevEl: ".swiper-button-prev-custom",
-            }}
-            pagination={{
-              clickable: true,
-              bulletClass: "swiper-pagination-bullet",
-              bulletActiveClass: "swiper-pagination-bullet-active",
-            }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: {
-                slidesPerView: 2,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-              1280: {
-                slidesPerView: 5,
-              },
-            }}
-            className="designers-swiper"
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={8}
+              slidesPerView={1}
+              navigation={{
+                nextEl: ".swiper-button-next-custom",
+                prevEl: ".swiper-button-prev-custom",
+              }}
+              pagination={{
+                clickable: true,
+                bulletClass: "swiper-pagination-bullet",
+                bulletActiveClass: "swiper-pagination-bullet-active",
+              }}
+              autoplay={{
+                delay: 4000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+                1024: {
+                  slidesPerView: 4,
+                },
+                1280: {
+                  slidesPerView: 5,
+                },
+              }}
+              className="designers-swiper"
+            >
             {designers.map((designer) => (
               <SwiperSlide key={designer.id}>
                 <div className="text-center ">
@@ -153,11 +166,10 @@ const DJsGrid = () => {
                 </div>
               </SwiperSlide>
             ))}
-          </Swiper>
+            </Swiper>
+          </motion.div>
         </div>
-      </div>
-
-      {/* Custom Swiper Styles */}
+      </div>      {/* Custom Swiper Styles */}
       <style jsx global>{`
         .swiper {
           padding-top: 20px;

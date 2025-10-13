@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const StatsSection = () => {
   const [counters, setCounters] = useState({
@@ -71,11 +72,23 @@ const StatsSection = () => {
     <section className="py-20 bg-white">
       <div className="max-w-7xl lg:max-w-[90%] mx-auto px-4 lg:px-8">
         {/* Header Section */}
-        <div className="mb-16">
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           {/* 3 Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
             {/* Left Column - RSMM Logo */}
-            <div className="flex justify-center lg:justify-start h-full items-end">
+            <motion.div
+              className="flex justify-center lg:justify-start h-full items-end"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="text-center">
                 <Image
                   src="/RSMM.svg"
@@ -85,10 +98,16 @@ const StatsSection = () => {
                   className="w-auto h-16 md:h-20"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Center Column - Text (2 columns wide) */}
-            <div className="lg:col-span-2">
+            <motion.div
+              className="lg:col-span-2"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-8 leading-tight text-center">
                 O RIO GRANDE DO SUL MOSTRA MODA
               </h2>
@@ -104,10 +123,16 @@ const StatsSection = () => {
                 <strong>universo fashion</strong>, com acesso a tendências,
                 marcas autorais e nomes promissores do mercado.
               </p>
-            </div>
+            </motion.div>
 
             {/* Right Column - DJOO Logo */}
-            <div className="flex justify-center lg:justify-end h-full items-end">
+            <motion.div
+              className="flex justify-center lg:justify-end h-full items-end"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <div className="text-center">
                 <Image
                   src="/djoo.svg"
@@ -117,12 +142,18 @@ const StatsSection = () => {
                   className="w-auto h-16 md:h-20"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Video Section */}
-        <div className="bg-black rounded-lg overflow-hidden mb-16 aspect-[21/9] mx-auto relative">
+        <motion.div
+          className="bg-black rounded-lg overflow-hidden mb-16 aspect-[21/9] mx-auto relative"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <video
             className="w-full h-full object-cover"
             autoPlay
@@ -131,7 +162,7 @@ const StatsSection = () => {
             playsInline
           >
             <source
-              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              src="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372667/RSMM_pwol3y.mp4"
               type="video/mp4"
             />
           </video>
@@ -148,7 +179,7 @@ const StatsSection = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Stats Numbers */}
         <div

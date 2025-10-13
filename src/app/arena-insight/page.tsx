@@ -33,7 +33,7 @@ export default function ArenaInsightPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
+      <VideoBanner videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372665/ARENA_INSIGHT_jfjoiy.mp4" />
       
       <ImageFeatureSection
         imageSrc="/arena.jpg"

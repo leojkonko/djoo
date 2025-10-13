@@ -33,8 +33,11 @@ export default function PassarelaPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
-      
+      <VideoBanner
+        videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/PASSARELA_ra0lyo.mp4
+"
+      />
+
       <ImageFeatureSection
         imageSrc="/passarela_bg.png"
         imageAlt="Passarela"

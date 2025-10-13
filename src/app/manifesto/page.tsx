@@ -150,7 +150,8 @@ const accordionData = [
 export default function ManifestoPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
+      https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/VIDEO_MANIFESTO_RSMM_-_30MB_v1lgr4.mp4
+      <VideoBanner videoUrl="" />
       {/* Hero Section with Logo */}
       <section className="relative min-h-screen flex flex-col items-center px-4 lg:pt-10">
         {/* Accordion Container */}
