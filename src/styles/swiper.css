@@ -1,14 +1,25 @@
 /* Swiper Global Styles */
 .swiper {
   padding-top: 20px;
+  overflow: visible !important;
 }
 
 /* Designers Swiper Styles */
 .designers-swiper {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: -12px !important;
-  margin-right: -12px !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+.designers-swiper .swiper-wrapper {
+  align-items: flex-end;
+  width: 100% !important;
+}
+
+.designers-swiper .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
 }
 
 .designers-swiper .swiper-pagination {
@@ -26,18 +37,6 @@
 
 .designers-swiper .swiper-pagination-bullet-active {
   background: #111827;
-}
-
-.designers-swiper .swiper-slide {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0 12px !important;
-  box-sizing: border-box;
-}
-
-.designers-swiper .swiper-wrapper {
-  align-items: flex-end;
 }
 
 /* Team Swiper Styles */

@@ -145,11 +145,12 @@ const TutorsSection = () => {
       </div>
       <div className="pb-4">
         <div className="lg:max-w-[90%] mx-auto ">
-          <div className="mx-auto px-4">
+          <div className="w-full">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
-              spaceBetween={40}
-              slidesPerView={1}
+              spaceBetween={20}
+              slidesPerView={5}
+              centeredSlides={false}
               navigation={{
                 nextEl: ".swiper-button-next-custom",
                 prevEl: ".swiper-button-prev-custom",
@@ -164,21 +165,25 @@ const TutorsSection = () => {
                 disableOnInteraction: false,
               }}
               breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
                 640: {
-                  slidesPerView: 1.5,
-                  spaceBetween: 30,
+                  slidesPerView: 2,
+                  spaceBetween: 20,
                 },
                 768: {
-                  slidesPerView: 2.5,
-                  spaceBetween: 35,
+                  slidesPerView: 3,
+                  spaceBetween: 20,
                 },
                 1024: {
-                  slidesPerView: 3.5,
-                  spaceBetween: 40,
+                  slidesPerView: 4,
+                  spaceBetween: 20,
                 },
                 1280: {
-                  slidesPerView: 4.5,
-                  spaceBetween: 40,
+                  slidesPerView: 5,
+                  spaceBetween: 20,
                 },
               }}
               className="designers-swiper"
@@ -187,7 +192,7 @@ const TutorsSection = () => {
                 <SwiperSlide key={designer.id}>
                   <div className="text-center group ">
                     {/* Designer Image */}
-                    <div className="relative overflow-hidden mb-4 transition-transform cursor-pointer duration-300 hover:scale-105 mx-auto w-80 h-96">
+                    <div className="relative overflow-hidden mb-4 transition-transform cursor-pointer duration-300 hover:scale-105 w-full aspect-[6/9]">
                       <Image
                         src={designer.image}
                         alt={designer.name}

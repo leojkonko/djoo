@@ -168,7 +168,7 @@ const StatsSection = () => {
           </video>
 
           {/* Video overlay with logo */}
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+          {/* <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
             <div className="text-center">
               <Image
                 src="/RSMM.svg"
@@ -178,7 +178,7 @@ const StatsSection = () => {
                 className="w-auto h-20 md:h-24 brightness-0 invert mx-auto"
               />
             </div>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Stats Numbers */}
