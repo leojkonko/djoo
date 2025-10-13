@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useEffect, useState, useRef } from "react";
+import { motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
@@ -18,18 +19,21 @@ const TutorsSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
   }, []);
 
   const team = [
@@ -188,41 +192,87 @@ const TutorsSection = () => {
               }}
               className="designers-swiper"
             >
-              {team.map((designer) => (
+              {team.map((designer, index) => (
                 <SwiperSlide key={designer.id}>
-                  <div className="text-center group ">
+                  <motion.div 
+                    className="text-center group"
+                    initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: index * 0.15,
+                      type: "spring",
+                      stiffness: 80,
+                      damping: 15
+                    }}
+                    viewport={{ once: false }}
+                  >
                     {/* Designer Image */}
-                    <div className="relative overflow-hidden mb-4 transition-transform cursor-pointer duration-300 hover:scale-105 w-full aspect-[6/9]">
+                    <motion.div 
+                      className="relative overflow-hidden mb-4 w-full aspect-[6/9] cursor-pointer"
+                      whileHover={{ 
+                        scale: 1.08,
+                        rotateY: 8,
+                        rotateX: 3,
+                        boxShadow: "0 30px 60px rgba(255,255,255,0.1)"
+                      }}
+                      transition={{ 
+                        type: "spring", 
+                        stiffness: 200,
+                        damping: 20
+                      }}
+                    >
                       <Image
                         src={designer.image}
                         alt={designer.name}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-all duration-700 group-hover:scale-115 group-hover:brightness-110"
                         sizes="(max-width: 768px) 160px, 192px"
                       />
-                    </div>
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        initial={{ scale: 0.9 }}
+                        whileHover={{ scale: 1 }}
+                      />
+                    </motion.div>
 
                     {/* Designer Name */}
-                    <h3 className="text-white text-[2.5rem] leading-tight text-end pr-2">
+                    <motion.h3 
+                      className="text-white text-[2.5rem] leading-tight text-end pr-2"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.7, delay: index * 0.1 + 0.4 }}
+                      viewport={{ once: false }}
+                    >
                       {designer.name.split(" ").map((word, idx) => (
-                        <div
+                        <motion.div
                           key={idx}
                           className={
                             idx === 0
                               ? "font-extrabold"
                               : "font-extralight -mt-2"
                           }
+                          initial={{ opacity: 0, y: 15 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: idx * 0.15 }}
+                          viewport={{ once: false }}
                         >
                           {word}
-                        </div>
+                        </motion.div>
                       ))}
-                    </h3>
+                    </motion.h3>
 
                     {/* Designer Role */}
-                    <p className="text-white text-xl font-extralight text-end pr-2 -mt-1">
+                    <motion.p 
+                      className="text-white text-xl font-extralight text-end pr-2 -mt-1"
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 + 0.6 }}
+                      viewport={{ once: false }}
+                    >
                       {designer.role}
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>

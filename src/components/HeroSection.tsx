@@ -9,8 +9,8 @@ const HeroSection = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.3,
+        delayChildren: 0.5,
       },
     },
   };
@@ -18,16 +18,21 @@ const HeroSection = () => {
   const wordVariants = {
     hidden: { 
       opacity: 0, 
-      y: 100,
-      rotateX: -90 
+      y: 150,
+      rotateX: -90,
+      scale: 0.5
     },
     visible: { 
       opacity: 1, 
       y: 0,
       rotateX: 0,
+      scale: 1,
       transition: {
-        duration: 0.8,
+        duration: 1.2,
         ease: "easeOut" as const,
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
       },
     },
   };
@@ -62,13 +67,34 @@ const HeroSection = () => {
           className="text-white text-6xl md:text-8xl lg:text-6xl leading-none font-extralight"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: false }}
         >
           {words.map((word, index) => (
             <motion.span
               key={index}
               className={`block ${word === "RSMM" ? "font-black" : ""}`}
               variants={wordVariants}
+              whileHover={{
+                scale: 1.1,
+                rotateY: 10,
+                rotateX: 5,
+                textShadow: "0 0 20px rgba(255,255,255,0.8)",
+                transition: { duration: 0.3 }
+              }}
+              animate={{
+                textShadow: word === "RSMM" ? [
+                  "0 0 0px rgba(255,255,255,0)",
+                  "0 0 20px rgba(255,255,255,0.8)",
+                  "0 0 0px rgba(255,255,255,0)"
+                ] : undefined,
+                transition: word === "RSMM" ? {
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 2
+                } : undefined
+              }}
             >
               {word}
             </motion.span>

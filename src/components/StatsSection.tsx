@@ -40,32 +40,42 @@ const StatsSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-
-          // Animate counters
-          animateCounter(0, 5470, 2000, (value) => {
-            setCounters((prev) => ({ ...prev, area: value }));
-          });
-
-          animateCounter(0, 20, 1500, (value) => {
-            setCounters((prev) => ({ ...prev, desfiles: value }));
-          });
-
-          // For "SHOW", we'll just animate the visibility
-          setTimeout(() => {
-            setCounters((prev) => ({ ...prev, show: 1 }));
-          }, 1000);
-        }
+        setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    let currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      // Animate counters
+      animateCounter(0, 5470, 2000, (value) => {
+        setCounters((prev) => ({ ...prev, area: value }));
+      });
+
+      animateCounter(0, 20, 1500, (value) => {
+        setCounters((prev) => ({ ...prev, desfiles: value }));
+      });
+
+      // For "SHOW", we'll just animate the visibility
+      setTimeout(() => {
+        setCounters((prev) => ({ ...prev, show: 1 }));
+      }, 1000);
+    } else {
+      // Reset counters when not visible
+      setCounters({ area: 0, desfiles: 0, show: 0 });
+    }
   }, [isVisible]);
 
   return (
@@ -77,7 +87,7 @@ const StatsSection = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           {/* 3 Column Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
@@ -87,7 +97,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="text-center">
                 <Image
@@ -106,7 +116,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-8 leading-tight text-center">
                 O RIO GRANDE DO SUL MOSTRA MODA
@@ -131,7 +141,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <div className="text-center">
                 <Image
@@ -152,7 +162,7 @@ const StatsSection = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <video
             className="w-full h-full object-cover"
@@ -186,52 +196,148 @@ const StatsSection = () => {
           ref={sectionRef}
           className="flex flex-col md:flex-row justify-center items-center gap-16 text-center"
         >
-          <div>
-            <div
-              className={`text-6xl md:text-8xl font-black text-gray-900 transition-all duration-500 ${
-                isVisible
-                  ? "opacity-100 transform translate-y-0"
-                  : "opacity-0 transform translate-y-10"
-              }`}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
+            animate={isVisible ? { 
+              opacity: 1, 
+              scale: 1, 
+              rotateX: 0,
+              transition: { 
+                duration: 1.2, 
+                delay: 0.2,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }
+            } : {
+              opacity: 0,
+              scale: 0.5,
+              rotateX: -90
+            }}
+          >
+            <motion.div
+              className="text-6xl md:text-8xl font-black text-gray-900"
+              animate={isVisible ? {
+                scale: [1, 1.05, 1],
+                transition: { 
+                  duration: 2, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut"
+                }
+              } : {}}
             >
               {counters.area > 0
                 ? `${counters.area.toLocaleString()}M²`
                 : "0M²"}
-            </div>
-            <div className="text-xl font-normal text-gray-600 mt-4 tracking-widest text-right">
+            </motion.div>
+            <motion.div 
+              className="text-xl font-normal text-gray-600 mt-4 tracking-widest text-right"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.8, delay: 0.5 }
+              } : { opacity: 0, y: 20 }}
+            >
               DE EVENTO
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
-            <div
-              className={`text-6xl md:text-8xl font-black text-gray-900 transition-all duration-500 delay-200 ${
-                isVisible
-                  ? "opacity-100 transform translate-y-0"
-                  : "opacity-0 transform translate-y-10"
-              }`}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
+            animate={isVisible ? { 
+              opacity: 1, 
+              scale: 1, 
+              rotateX: 0,
+              transition: { 
+                duration: 1.2, 
+                delay: 0.4,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }
+            } : {
+              opacity: 0,
+              scale: 0.5,
+              rotateX: -90
+            }}
+          >
+            <motion.div
+              className="text-6xl md:text-8xl font-black text-gray-900"
+              animate={isVisible ? {
+                scale: [1, 1.08, 1],
+                transition: { 
+                  duration: 2.5, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  delay: 0.5
+                }
+              } : {}}
             >
               {counters.desfiles}
-            </div>
-            <div className="text-xl font-normal text-gray-600 mt-4 tracking-widest">
+            </motion.div>
+            <motion.div 
+              className="text-xl font-normal text-gray-600 mt-4 tracking-widest"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.8, delay: 0.7 }
+              } : { opacity: 0, y: 20 }}
+            >
               DESFILES
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div>
-            <div
-              className={`text-6xl md:text-8xl font-black text-gray-900 transition-all duration-500 delay-500 ${
-                counters.show > 0
-                  ? "opacity-100 transform translate-y-0"
-                  : "opacity-0 transform translate-y-10"
-              }`}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
+            animate={isVisible ? { 
+              opacity: 1, 
+              scale: 1, 
+              rotateX: 0,
+              transition: { 
+                duration: 1.2, 
+                delay: 0.6,
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }
+            } : {
+              opacity: 0,
+              scale: 0.5,
+              rotateX: -90
+            }}
+          >
+            <motion.div
+              className="text-6xl md:text-8xl font-black text-gray-900"
+              animate={isVisible ? {
+                scale: [1, 1.1, 1],
+                rotateZ: [0, -2, 2, 0],
+                transition: { 
+                  duration: 3, 
+                  repeat: Infinity, 
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                  delay: 1
+                }
+              } : {}}
             >
               SHOW
-            </div>
-            <div className="text-xl text-right font-normal text-gray-600 mt-4 tracking-widest">
+            </motion.div>
+            <motion.div 
+              className="text-xl text-right font-normal text-gray-600 mt-4 tracking-widest"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isVisible ? { 
+                opacity: 1, 
+                y: 0,
+                transition: { duration: 0.8, delay: 0.9 }
+              } : { opacity: 0, y: 20 }}
+            >
               NACIONAL
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

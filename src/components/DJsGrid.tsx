@@ -84,20 +84,31 @@ const DJsGrid = () => {
         <div className="w-full">
           <motion.div 
             className="mb-4"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: -100, rotateY: -45 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ 
+              duration: 1.2, 
+              type: "spring", 
+              stiffness: 100,
+              damping: 20 
+            }}
+            viewport={{ once: false }}
           >
             <h2 className="text-3xl font-semibold text-gray-900 mb-0 ps-2">
               DESFILES
             </h2>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 1.0, 
+              delay: 0.3,
+              type: "spring",
+              stiffness: 80,
+              damping: 15
+            }}
+            viewport={{ once: false }}
           >
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -141,39 +152,84 @@ const DJsGrid = () => {
               }}
               className="designers-swiper"
             >
-            {designers.map((designer) => (
+            {designers.map((designer, index) => (
               <SwiperSlide key={designer.id}>
-                <div className="text-center ">
+                <motion.div 
+                  className="text-center"
+                  initial={{ opacity: 0, y: 50, rotateY: -15 }}
+                  whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
+                  viewport={{ once: false }}
+                >
                   {/* Designer Image */}
-                  <div className="relative overflow-hidden mb-4 transition-transform duration-300 group cursor-pointer hover:scale-105 group-hover:scale-105 w-full aspect-[6/9]">
+                  <motion.div 
+                    className="relative overflow-hidden mb-4 w-full aspect-[6/9] group cursor-pointer"
+                    whileHover={{ 
+                      scale: 1.05,
+                      rotateY: 5,
+                      rotateX: 5,
+                      boxShadow: "0 25px 50px rgba(0,0,0,0.3)"
+                    }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 300,
+                      damping: 20
+                    }}
+                  >
                     <Image
                       src={designer.image}
                       alt={designer.name}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                       sizes="(max-width: 768px) 160px, 192px"
                     />
-                  </div>
+                    <motion.div
+                      className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      initial={{ scale: 0.8 }}
+                      whileHover={{ scale: 1 }}
+                    />
+                  </motion.div>
 
                   {/* Designer Name */}
-                  <h3 className="text-gray-900 text-4xl leading-tight text-end pr-2">
+                  <motion.h3 
+                    className="text-gray-900 text-4xl leading-tight text-end pr-2"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                    viewport={{ once: false }}
+                  >
                     {designer.name.split(" ").map((word, idx) => (
-                      <>
-                        <div
-                          key={idx}
+                      <motion.div key={idx}>
+                        <motion.div
                           className={
                             idx === 0 ? "font-extrabold" : "font-light"
                           }
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: idx * 0.1 }}
+                          viewport={{ once: false }}
                         >
                           {word}
-                        </div>
-                        <p className="font-extralight text-xl -mt-2">
+                        </motion.div>
+                        <motion.p 
+                          className="font-extralight text-xl -mt-2"
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.4, delay: 0.2 }}
+                          viewport={{ once: false }}
+                        >
                           [A DEFINIR]
-                        </p>
-                      </>
+                        </motion.p>
+                      </motion.div>
                     ))}
-                  </h3>
-                </div>
+                  </motion.h3>
+                </motion.div>
               </SwiperSlide>
             ))}
             </Swiper>
