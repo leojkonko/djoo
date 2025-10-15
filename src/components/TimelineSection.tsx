@@ -149,15 +149,26 @@ const TimelineSection = () => {
         </motion.div>
 
         {/* Mobile Spotify Logo */}
-        <div>
+        <motion.a
+          href="https://open.spotify.com/artist/afrodith"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+          whileHover={{
+            scale: 1.1,
+            rotateY: 5,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
+          }}
+          transition={{ duration: 0.3 }}
+        >
           <Image
             src="/spotify.png"
-            alt="Spotify"
+            alt="Spotify - Afrodith"
             width={120}
             height={36}
             className="object-contain w-64"
           />
-        </div>
+        </motion.a>
       </motion.div>
 
       {/* Desktop Button */}
@@ -194,15 +205,27 @@ const TimelineSection = () => {
       </motion.div>
 
       {/* Desktop Spotify Logo */}
-      <div className="hidden lg:block absolute -bottom-48 left-[48%] transform -translate-x-1/2 z-10">
+      <motion.a
+        href="https://open.spotify.com/artist/afrodith"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden lg:block absolute -bottom-48 left-[48%] transform -translate-x-1/2 z-10 cursor-pointer"
+        whileHover={{
+          scale: 1.15,
+          rotateY: 10,
+          rotateX: 5,
+          boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+        }}
+        transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
+      >
         <Image
           src="/spotify.png"
-          alt="Spotify"
+          alt="Spotify - Afrodith"
           width={120}
           height={36}
           className="object-contain w-80"
         />
-      </div>
+      </motion.a>
     </section>
   );
 };
