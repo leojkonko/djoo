@@ -1,38 +1,30 @@
 /* Swiper Global Styles */
 .swiper {
-  padding-top: 20px;
-  overflow: visible !important;
+  width: 100%;
+  padding: 20px 0;
 }
 
 /* Designers Swiper Styles */
 .designers-swiper {
-  overflow: visible !important;
-  width: 100% !important;
-}
-
-.designers-swiper .swiper-wrapper {
-  align-items: flex-end;
-  width: 100% !important;
+  width: 100%;
+  padding-bottom: 50px;
 }
 
 .designers-swiper .swiper-slide {
-  height: auto !important;
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: center !important;
+  width: auto;
+  height: auto;
 }
 
 .designers-swiper .swiper-pagination {
-  position: static !important;
-  margin-top: 60px;
+  bottom: 0;
 }
 
 .designers-swiper .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background: #d1d5db;
   opacity: 1;
-  margin: 0 6px;
+  margin: 0 5px;
 }
 
 .designers-swiper .swiper-pagination-bullet-active {

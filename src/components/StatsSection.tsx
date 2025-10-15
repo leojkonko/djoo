@@ -172,7 +172,7 @@ const StatsSection = () => {
             playsInline
           >
             <source
-              src="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372667/RSMM_pwol3y.mp4"
+              src="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/VIDEO_MANIFESTO_RSMM_-_30MB_v1lgr4.mp4"
               type="video/mp4"
             />
           </video>
@@ -198,47 +198,44 @@ const StatsSection = () => {
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
-            animate={isVisible ? { 
-              opacity: 1, 
-              scale: 1, 
-              rotateX: 0,
-              transition: { 
-                duration: 1.2, 
-                delay: 0.2,
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }
-            } : {
-              opacity: 0,
-              scale: 0.5,
-              rotateX: -90
-            }}
+            animate={
+              isVisible
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                    rotateX: 0,
+                    transition: {
+                      duration: 1.2,
+                      delay: 0.2,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                    },
+                  }
+                : {
+                    opacity: 0,
+                    scale: 0.5,
+                    rotateX: -90,
+                  }
+            }
           >
-            <motion.div
-              className="text-6xl md:text-8xl font-black text-gray-900"
-              animate={isVisible ? {
-                scale: [1, 1.05, 1],
-                transition: { 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  repeatType: "reverse",
-                  ease: "easeInOut"
-                }
-              } : {}}
-            >
+            <div className="text-6xl md:text-8xl font-black text-gray-900">
               {counters.area > 0
                 ? `${counters.area.toLocaleString()}M²`
                 : "0M²"}
-            </motion.div>
-            <motion.div 
+            </div>
+            <motion.div
               className="text-xl font-normal text-gray-600 mt-4 tracking-widest text-right"
               initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { 
-                opacity: 1, 
-                y: 0,
-                transition: { duration: 0.8, delay: 0.5 }
-              } : { opacity: 0, y: 20 }}
+              animate={
+                isVisible
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.8, delay: 0.5 },
+                    }
+                  : { opacity: 0, y: 20 }
+              }
             >
               DE EVENTO
             </motion.div>
@@ -246,46 +243,42 @@ const StatsSection = () => {
 
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
-            animate={isVisible ? { 
-              opacity: 1, 
-              scale: 1, 
-              rotateX: 0,
-              transition: { 
-                duration: 1.2, 
-                delay: 0.4,
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }
-            } : {
-              opacity: 0,
-              scale: 0.5,
-              rotateX: -90
-            }}
+            animate={
+              isVisible
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                    rotateX: 0,
+                    transition: {
+                      duration: 1.2,
+                      delay: 0.4,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                    },
+                  }
+                : {
+                    opacity: 0,
+                    scale: 0.5,
+                    rotateX: -90,
+                  }
+            }
           >
-            <motion.div
-              className="text-6xl md:text-8xl font-black text-gray-900"
-              animate={isVisible ? {
-                scale: [1, 1.08, 1],
-                transition: { 
-                  duration: 2.5, 
-                  repeat: Infinity, 
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                  delay: 0.5
-                }
-              } : {}}
-            >
+            <div className="text-6xl md:text-8xl font-black text-gray-900">
               {counters.desfiles}
-            </motion.div>
-            <motion.div 
+            </div>
+            <motion.div
               className="text-xl font-normal text-gray-600 mt-4 tracking-widest"
               initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { 
-                opacity: 1, 
-                y: 0,
-                transition: { duration: 0.8, delay: 0.7 }
-              } : { opacity: 0, y: 20 }}
+              animate={
+                isVisible
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.8, delay: 0.7 },
+                    }
+                  : { opacity: 0, y: 20 }
+              }
             >
               DESFILES
             </motion.div>
@@ -293,47 +286,42 @@ const StatsSection = () => {
 
           <motion.div
             initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
-            animate={isVisible ? { 
-              opacity: 1, 
-              scale: 1, 
-              rotateX: 0,
-              transition: { 
-                duration: 1.2, 
-                delay: 0.6,
-                type: "spring",
-                stiffness: 100,
-                damping: 15
-              }
-            } : {
-              opacity: 0,
-              scale: 0.5,
-              rotateX: -90
-            }}
+            animate={
+              isVisible
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                    rotateX: 0,
+                    transition: {
+                      duration: 1.2,
+                      delay: 0.6,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                    },
+                  }
+                : {
+                    opacity: 0,
+                    scale: 0.5,
+                    rotateX: -90,
+                  }
+            }
           >
-            <motion.div
-              className="text-6xl md:text-8xl font-black text-gray-900"
-              animate={isVisible ? {
-                scale: [1, 1.1, 1],
-                rotateZ: [0, -2, 2, 0],
-                transition: { 
-                  duration: 3, 
-                  repeat: Infinity, 
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                  delay: 1
-                }
-              } : {}}
-            >
+            <div className="text-6xl md:text-8xl font-black text-gray-900">
               SHOW
-            </motion.div>
-            <motion.div 
+            </div>
+            <motion.div
               className="text-xl text-right font-normal text-gray-600 mt-4 tracking-widest"
               initial={{ opacity: 0, y: 20 }}
-              animate={isVisible ? { 
-                opacity: 1, 
-                y: 0,
-                transition: { duration: 0.8, delay: 0.9 }
-              } : { opacity: 0, y: 20 }}
+              animate={
+                isVisible
+                  ? {
+                      opacity: 1,
+                      y: 0,
+                      transition: { duration: 0.8, delay: 0.9 },
+                    }
+                  : { opacity: 0, y: 20 }
+              }
             >
               NACIONAL
             </motion.div>

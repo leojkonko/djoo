@@ -33,7 +33,7 @@ export default function BusinessLoungePage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
+      <VideoBanner videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372667/RSMM_pwol3y.mp4" />
 
       <ImageFeatureSection
         imageSrc="/bussiness_bg.jpg"

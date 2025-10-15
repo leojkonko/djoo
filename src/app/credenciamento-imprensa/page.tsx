@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function ShowPage() {
+export default function CredenciamentoImprensaPage() {
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-4">
       <motion.div

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   const words = ["ARE", "YOU", "READY", "FOR", "THE", "RSMM", "?"];
-  
+
   const containerVariants = {
     hidden: {},
     visible: {
@@ -16,14 +16,14 @@ const HeroSection = () => {
   };
 
   const wordVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 150,
       rotateX: -90,
-      scale: 0.5
+      scale: 0.5,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       rotateX: 0,
       scale: 1,
@@ -62,7 +62,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center">
-        <motion.div 
+        <motion.div
           className="text-white text-6xl md:text-8xl lg:text-6xl leading-none font-extralight"
           variants={containerVariants}
           initial="hidden"
@@ -79,20 +79,26 @@ const HeroSection = () => {
                 rotateY: 10,
                 rotateX: 5,
                 textShadow: "0 0 20px rgba(255,255,255,0.8)",
-                transition: { duration: 0.3 }
+                transition: { duration: 0.3 },
               }}
               animate={{
-                textShadow: word === "RSMM" ? [
-                  "0 0 0px rgba(255,255,255,0)",
-                  "0 0 20px rgba(255,255,255,0.8)",
-                  "0 0 0px rgba(255,255,255,0)"
-                ] : undefined,
-                transition: word === "RSMM" ? {
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  delay: 2
-                } : undefined
+                textShadow:
+                  word === "RSMM"
+                    ? [
+                        "0 0 0px rgba(255,255,255,0)",
+                        "0 0 20px rgba(255,255,255,0.8)",
+                        "0 0 0px rgba(255,255,255,0)",
+                      ]
+                    : undefined,
+                transition:
+                  word === "RSMM"
+                    ? {
+                        duration: 3,
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        delay: 2,
+                      }
+                    : undefined,
               }}
             >
               {word}

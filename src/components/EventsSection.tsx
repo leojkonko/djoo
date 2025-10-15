@@ -8,15 +8,31 @@ const EventsSection = () => {
   return (
     <section className="relative w-full mt-8">
       {/* Desktop - Original image */}
-      <div className="hidden lg:block relative w-full h-screen">
+      <Link href="/programacao" className="hidden lg:block relative w-full h-screen group cursor-pointer">
         <Image
           src="/days.jpg"
           alt="Days"
           fill
-          className="object-contain"
+          className="object-contain transition-transform duration-500 group-hover:scale-105"
           priority
         />
-      </div>
+        <motion.div 
+          className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500 flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+        >
+          <motion.div
+            initial={{ scale: 0, rotateZ: -180 }}
+            whileHover={{ scale: 1, rotateZ: 0 }}
+            transition={{ type: "spring", stiffness: 200, damping: 15 }}
+            className="bg-white/90 backdrop-blur-sm px-12 py-6 rounded-lg shadow-2xl"
+          >
+            <h2 className="text-4xl font-bold text-gray-900 uppercase tracking-wider">
+              Ver Programação
+            </h2>
+          </motion.div>
+        </motion.div>
+      </Link>
 
       {/* Mobile - Interactive links */}
       <div className="lg:hidden py-8 px-4">

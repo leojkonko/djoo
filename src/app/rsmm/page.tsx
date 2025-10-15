@@ -113,15 +113,16 @@ export default function RSMMPage() {
             <p>
               A estratégia central do evento é consolidar-se como uma{" "}
               <span className="font-bold">boutique fashion business</span>,
-              oferecendo um formato diferenciado dentro do setor de moda. A ideia
-              é atrair marcas, lojistas e profissionais que veem o evento como uma
-              plataforma direta de relacionamento com o mercado consumidor.
+              oferecendo um formato diferenciado dentro do setor de moda. A
+              ideia é atrair marcas, lojistas e profissionais que veem o evento
+              como uma plataforma direta de relacionamento com o mercado
+              consumidor.
             </p>
             <p>
               O evento será um ponto de encontro entre{" "}
               <span className="font-bold">vendedores e compradores</span>,
-              promovendo o lançamento de coleções, a fidelização de novos públicos
-              e a ampliação de redes comerciais.
+              promovendo o lançamento de coleções, a fidelização de novos
+              públicos e a ampliação de redes comerciais.
             </p>
             <p>
               A proposta é posicionar o <span className="font-bold">RSMM</span>{" "}
@@ -292,7 +293,7 @@ export default function RSMMPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <VideoBanner />
+      <VideoBanner videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372667/RSMM_pwol3y.mp4" />
       {/* Hero Section with Logo */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 lg:pt-10">
         {/* Accordion Container */}

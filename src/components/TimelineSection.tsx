@@ -149,23 +149,7 @@ const TimelineSection = () => {
         </motion.div>
 
         {/* Mobile Spotify Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, rotateZ: -5 }}
-          whileInView={{ opacity: 1, y: 0, rotateZ: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.8,
-            type: "spring",
-            stiffness: 100,
-            damping: 15,
-          }}
-          viewport={{ once: false }}
-          whileHover={{
-            scale: 1.1,
-            rotateZ: 2,
-            transition: { duration: 0.3 },
-          }}
-        >
+        <div>
           <Image
             src="/spotify.png"
             alt="Spotify"
@@ -173,7 +157,7 @@ const TimelineSection = () => {
             height={36}
             className="object-contain w-64"
           />
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* Desktop Button */}
@@ -210,25 +194,7 @@ const TimelineSection = () => {
       </motion.div>
 
       {/* Desktop Spotify Logo */}
-      <motion.div
-        className="hidden lg:block absolute -bottom-48 left-[48%] transform -translate-x-1/2 z-10"
-        initial={{ opacity: 0, y: 50, rotateZ: -10 }}
-        whileInView={{ opacity: 1, y: 0, rotateZ: 0 }}
-        transition={{
-          duration: 1.2,
-          delay: 1.2,
-          type: "spring",
-          stiffness: 80,
-          damping: 15,
-        }}
-        viewport={{ once: false }}
-        whileHover={{
-          scale: 1.15,
-          rotateZ: 5,
-          y: -10,
-          transition: { duration: 0.4 },
-        }}
-      >
+      <div className="hidden lg:block absolute -bottom-48 left-[48%] transform -translate-x-1/2 z-10">
         <Image
           src="/spotify.png"
           alt="Spotify"
@@ -236,7 +202,7 @@ const TimelineSection = () => {
           height={36}
           className="object-contain w-80"
         />
-      </motion.div>
+      </div>
     </section>
   );
 };

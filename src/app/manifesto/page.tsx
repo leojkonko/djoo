@@ -15,31 +15,18 @@ const accordionData = [
           Recomeçar. Reconstruir. Reimaginar. Reequilibrar.
         </h3>
 
-        <div className="relative w-full aspect-[21/9] bg-gray-800 rounded-lg flex items-center justify-center my-8">
-          <div className="text-center">
-            <svg
-              className="mx-auto h-12 w-12 text-gray-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-            <p className="mt-2 text-lg font-semibold text-red-500">
-              VÍDEO AINDA NÃO ESTÁ PRONTO
-            </p>
-          </div>
+        <div className="relative w-full aspect-[21/9] rounded-lg overflow-hidden my-8">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            preload="metadata"
+          >
+            <source
+              src="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/VIDEO_MANIFESTO_RSMM_-_30MB_v1lgr4.mp4"
+              type="video/mp4"
+            />
+            Seu navegador não suporta a reprodução de vídeos.
+          </video>
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
@@ -150,8 +137,8 @@ const accordionData = [
 export default function ManifestoPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/VIDEO_MANIFESTO_RSMM_-_30MB_v1lgr4.mp4
-      <VideoBanner videoUrl="" />
+      {/* <VideoBanner videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372669/VIDEO_MANIFESTO_RSMM_-_30MB_v1lgr4.mp4" /> */}
+      <VideoBanner videoUrl="https://res.cloudinary.com/dgbgqhrpa/video/upload/v1760372667/RSMM_pwol3y.mp4" />
       {/* Hero Section with Logo */}
       <section className="relative min-h-screen flex flex-col items-center px-4 lg:pt-10">
         {/* Accordion Container */}

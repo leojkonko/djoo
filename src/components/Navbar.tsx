@@ -53,14 +53,26 @@ const Navbar = () => {
         </div>
       </button>
 
-      {/* Compre seu ingresso button */}
-      <button
-        className={`fixed top-6 left-4 z-50 text-white border-2 border-white hover:cursor-pointer px-8 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 ${
-          isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
-        }`}
-      >
-        COMPRE SEU INGRESSO
-      </button>
+      {/* Action buttons */}
+      <div className="fixed top-6 left-4 z-50 flex gap-4">
+        <button
+          className={`text-white border-2 border-white hover:cursor-pointer px-8 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 ${
+            isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
+          }`}
+        >
+          COMPRE SEU INGRESSO
+        </button>
+        <a
+          href="https://www.youtube.com/watch?v=jBJn4u_AP7g"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`text-white border-2 border-white hover:cursor-pointer px-8 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 ${
+            isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
+          }`}
+        >
+          ASSISTIR ONLINE
+        </a>
+      </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
