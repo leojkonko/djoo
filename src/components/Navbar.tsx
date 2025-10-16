@@ -23,11 +23,63 @@ const Navbar = () => {
         <div className="fixed top-0 left-0 right-0 h-24 z-40 bg-black/10 backdrop-blur-xs shadow-2xl transition-all duration-300"></div>
       )}
 
-      {/* Top scroll text bar - exactly like original */}
+      {/* Mobile Header Wrapper */}
+      <header
+        className={`${
+          isScrolled ? "fixed" : "relative bg-black"
+        } lg:contents top-0 left-0 right-0 w-full z-50 transition-all duration-300  backdrop-blur-xs`}
+      >
+        <div className="flex justify-between items-start w-full p-4 lg:contents">
+          {/* Action buttons */}
+          <div
+            className={`flex gap-2 lg:fixed lg:top-6 lg:left-4 z-50 transition-all duration-300 ${
+              isMenuOpen
+                ? "opacity-0 pointer-events-none invisible"
+                : "opacity-100 visible"
+            }`}
+          >
+            <button
+              className={`text-white border-2 border-white hover:cursor-pointer px-3 lg:px-8 py-3 lg:py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2 ${
+                isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
+              }`}
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                />
+              </svg>
+              <span className="hidden md:inline">COMPRE SEU INGRESSO</span>
+            </button>
+            <a
+              href="https://www.youtube.com/watch?v=jBJn4u_AP7g"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-white border-2 border-white hover:cursor-pointer px-3 lg:px-8 py-3 lg:py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-2 ${
+                isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
+              }`}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z" />
+              </svg>
+              <span className="hidden md:inline">ASSISTIR ONLINE</span>
+            </a>
+          </div>
+        </div>
+      </header>
 
-      {/* Menu toggle button */}
+      {/* Menu toggle button - sempre visível */}
       <button
-        className={`fixed top-6 right-4 z-50 hover:cursor-pointer text-white focus:outline-none p-3 rounded-lg transition-all duration-300 group ${
+        className={`${
+          isScrolled ? "fixed" : "absolute"
+        } lg:fixed top-6 right-4 z-[70] hover:cursor-pointer text-white focus:outline-none p-3 rounded-lg transition-all duration-300 group ${
           isScrolled
             ? "bg-black/60 shadow-xl hover:bg-black/80 hover:scale-110 hover:rotate-3"
             : "bg-black/50 hover:bg-black/70 hover:scale-110 hover:rotate-3"
@@ -53,30 +105,9 @@ const Navbar = () => {
         </div>
       </button>
 
-      {/* Action buttons */}
-      <div className="fixed top-6 left-4 z-50 flex gap-4">
-        <button
-          className={`text-white border-2 border-white hover:cursor-pointer px-8 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 ${
-            isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
-          }`}
-        >
-          COMPRE SEU INGRESSO
-        </button>
-        <a
-          href="https://www.youtube.com/watch?v=jBJn4u_AP7g"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`text-white border-2 border-white hover:cursor-pointer px-8 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition-all duration-300 ${
-            isScrolled ? "bg-black/60 shadow-xl" : "bg-transparent"
-          }`}
-        >
-          ASSISTIR ONLINE
-        </a>
-      </div>
-
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black/75 backdrop-blur-lg">
+        <div className="fixed inset-0 z-[60] bg-black/75 backdrop-blur-lg">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             <Link
               href="/"
@@ -147,6 +178,13 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               CREDENCIAMENTO IMPRENSA
+            </Link>
+            <Link
+              href="/blog"
+              className="text-white text-2xl font-bold hover:text-ladyj-pink transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              BLOG
             </Link>
           </div>
         </div>

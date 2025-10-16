@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const PartnersSection = () => {
   return (
@@ -206,17 +207,22 @@ const PartnersSection = () => {
             viewport={{ once: false }}
           >
             <motion.div
-              className="w-72 h-28 bg-white border-2 border-gray-300 flex items-center justify-center"
+              className="w-72 h-28 bg-white border-2 border-gray-300 flex items-center justify-center relative overflow-hidden"
               whileHover={{
                 scale: 1.08,
                 rotateY: 10,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
               }}
             >
-              <span className="text-black font-bold text-lg">SUA MARCA</span>
+              <Image
+                src="/partner1.png"
+                alt="Partner 1"
+                fill
+                className="object-contain p-4"
+              />
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             className="flex justify-end"
             initial={{ opacity: 0, rotateX: -90 }}
@@ -225,14 +231,19 @@ const PartnersSection = () => {
             viewport={{ once: false }}
           >
             <motion.div
-              className="w-72 h-28 bg-white border-2 border-gray-300 flex items-center justify-center"
+              className="w-72 h-28 bg-white border-2 border-gray-300 flex items-center justify-center relative overflow-hidden"
               whileHover={{
                 scale: 1.08,
                 rotateY: -10,
                 boxShadow: "0 20px 40px rgba(0,0,0,0.25)",
               }}
             >
-              <span className="text-black font-bold text-lg">SUA MARCA</span>
+              <Image
+                src="/partner2.png"
+                alt="Partner 2"
+                fill
+                className="object-contain p-4"
+              />
             </motion.div>
           </motion.div>
         </motion.div>

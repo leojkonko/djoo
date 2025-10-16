@@ -57,7 +57,7 @@ const Footer = () => {
                   51 9 9715.4799
                 </span>
               </a>
-              <a
+              {/* <a
                 href="https://www.instagram.com/rsmm_/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -67,7 +67,7 @@ const Footer = () => {
                 <span className="group-hover:translate-x-1 transition-transform duration-300">
                   @rsmm_
                 </span>
-              </a>
+              </a> */}
             </div>
           </div>
 
