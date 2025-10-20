@@ -193,14 +193,14 @@ const PartnersSection = () => {
 
         {/* Technical Partners (2 logos) */}
         <motion.div
-          className="flex justify-between items-center max-w-6xl mx-auto px-4 mt-20"
+          className="flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0 max-w-6xl mx-auto px-4 mt-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.0 }}
           viewport={{ once: false }}
         >
           <motion.div
-            className="flex justify-start"
+            className="flex justify-center md:justify-start"
             initial={{ opacity: 0, rotateX: -90 }}
             whileInView={{ opacity: 1, rotateX: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -224,7 +224,7 @@ const PartnersSection = () => {
           </motion.div>
 
           <motion.div
-            className="flex justify-end"
+            className="flex justify-center md:justify-end"
             initial={{ opacity: 0, rotateX: -90 }}
             whileInView={{ opacity: 1, rotateX: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

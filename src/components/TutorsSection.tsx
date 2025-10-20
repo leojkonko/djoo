@@ -148,7 +148,7 @@ const TutorsSection = () => {
         </div>
       </div>
       <div className="pb-4">
-        <div className="lg:max-w-[90%] mx-auto ">
+        <div className="lg:max-w-[90%] px-6 lg:px-0 mx-auto ">
           <div className="w-full">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
@@ -194,32 +194,32 @@ const TutorsSection = () => {
             >
               {team.map((designer, index) => (
                 <SwiperSlide key={designer.id}>
-                  <motion.div 
+                  <motion.div
                     className="text-center group"
                     initial={{ opacity: 0, y: 60, scale: 0.9 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ 
-                      duration: 0.8, 
+                    transition={{
+                      duration: 0.8,
                       delay: index * 0.15,
                       type: "spring",
                       stiffness: 80,
-                      damping: 15
+                      damping: 15,
                     }}
                     viewport={{ once: false }}
                   >
                     {/* Designer Image */}
-                    <motion.div 
+                    <motion.div
                       className="relative overflow-hidden mb-4 w-full aspect-[6/9] cursor-pointer"
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.08,
                         rotateY: 8,
                         rotateX: 3,
-                        boxShadow: "0 30px 60px rgba(255,255,255,0.1)"
+                        boxShadow: "0 30px 60px rgba(255,255,255,0.1)",
                       }}
-                      transition={{ 
-                        type: "spring", 
+                      transition={{
+                        type: "spring",
                         stiffness: 200,
-                        damping: 20
+                        damping: 20,
                       }}
                     >
                       <Image
@@ -237,7 +237,7 @@ const TutorsSection = () => {
                     </motion.div>
 
                     {/* Designer Name */}
-                    <motion.h3 
+                    <motion.h3
                       className="text-white text-[2.5rem] leading-tight text-end pr-2"
                       initial={{ opacity: 0, x: 30 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -263,7 +263,7 @@ const TutorsSection = () => {
                     </motion.h3>
 
                     {/* Designer Role */}
-                    <motion.p 
+                    <motion.p
                       className="text-white text-xl font-extralight text-end pr-2 -mt-1"
                       initial={{ opacity: 0, y: 15 }}
                       whileInView={{ opacity: 1, y: 0 }}
