@@ -147,7 +147,7 @@ const TutorsSection = () => {
           </div>
         </div>
       </div>
-      <div className="pb-4">
+      {/* <div className="pb-4">
         <div className="lg:max-w-[90%] px-6 lg:px-0 mx-auto ">
           <div className="w-full">
             <Swiper
@@ -207,7 +207,6 @@ const TutorsSection = () => {
                     }}
                     viewport={{ once: false }}
                   >
-                    {/* Designer Image */}
                     <motion.div
                       className="relative overflow-hidden mb-4 w-full aspect-[6/9] cursor-pointer"
                       whileHover={{
@@ -236,7 +235,6 @@ const TutorsSection = () => {
                       />
                     </motion.div>
 
-                    {/* Designer Name */}
                     <motion.h3
                       className="text-white text-[2.5rem] leading-tight text-end pr-2"
                       initial={{ opacity: 0, x: 30 }}
@@ -262,7 +260,6 @@ const TutorsSection = () => {
                       ))}
                     </motion.h3>
 
-                    {/* Designer Role */}
                     <motion.p
                       className="text-white text-xl font-extralight text-end pr-2 -mt-1"
                       initial={{ opacity: 0, y: 15 }}
@@ -278,7 +275,7 @@ const TutorsSection = () => {
             </Swiper>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
